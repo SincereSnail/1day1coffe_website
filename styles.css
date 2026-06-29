@@ -1,5 +1,5 @@
 /* ============================================
-   1일1잔 - Apple Style Design System
+   1일1잔 - Apple Style Design System v2
    ============================================ */
 
 /* Reset & Base */
@@ -23,6 +23,13 @@
   --color-border: #d2d2d7;
   --color-border-light: #e8e8ed;
   --color-white: #ffffff;
+
+  /* Dark section text */
+  --color-text-on-dark: #f5f5f7;
+  --color-text-secondary-on-dark: #a1a1a6;
+  --color-text-tertiary-on-dark: #86868b;
+  --color-accent-on-dark: #4da6ff;
+  --color-accent-hover-on-dark: #7bbfff;
 
   /* Typography */
   --font-sans: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -79,6 +86,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 img {
@@ -125,6 +133,7 @@ button {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   transition: background var(--duration-normal) var(--ease-out),
               box-shadow var(--duration-normal) var(--ease-out);
+  overflow: hidden;
 }
 
 .navbar.scrolled {
@@ -200,10 +209,14 @@ button {
 
 .nav-link {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color-text-secondary);
   transition: color var(--duration-fast) var(--ease-out);
   position: relative;
+  padding: 8px 12px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-link::after {
@@ -266,29 +279,16 @@ button {
   z-index: 0;
 }
 
-.hero-gradient {
+.hero-image {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 30% 20%, rgba(0, 113, 227, 0.06) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 60%, rgba(175, 130, 255, 0.05) 0%, transparent 60%),
-    radial-gradient(ellipse at 50% 80%, rgba(255, 149, 0, 0.04) 0%, transparent 60%);
-  animation: gradientShift 20s ease-in-out infinite;
+  background: url('../images/hero.jpg') center/cover no-repeat;
 }
 
-@keyframes gradientShift {
-  0%, 100% { opacity: 1; }
-  33% { opacity: 0.8; }
-  66% { opacity: 0.9; }
-}
-
-.hero-pattern {
+.hero-overlay {
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.03) 1px, transparent 0);
-  background-size: 40px 40px;
-  opacity: 0.5;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .hero-content {
@@ -300,7 +300,7 @@ button {
 .hero-eyebrow {
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-text-tertiary);
+  color: var(--color-white);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: var(--space-lg);
@@ -329,7 +329,7 @@ button {
 .title-line:nth-child(4) { animation-delay: 0.75s; }
 
 .title-accent {
-  background: linear-gradient(135deg, var(--color-accent), #af82ff);
+  background: linear-gradient(135deg, #005bb5, #8c5cf0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -338,7 +338,7 @@ button {
 .hero-subtitle {
   font-size: clamp(16px, 2.5vw, 20px);
   font-weight: 300;
-  color: var(--color-text-secondary);
+  color: var(--color-white);
   line-height: 1.7;
   margin-bottom: var(--space-2xl);
   opacity: 0;
@@ -370,7 +370,7 @@ button {
 .hero-scroll span {
   font-size: 12px;
   font-weight: 500;
-  color: var(--color-text-tertiary);
+  color: var(--color-white);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -448,11 +448,11 @@ button {
   display: inline-block;
   font-size: 12px;
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-text);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: var(--space-md);
-  background: var(--color-accent-subtle);
+  background: rgba(0, 113, 227, 0.25);
   padding: 4px 12px;
   border-radius: var(--radius-full);
 }
@@ -599,18 +599,19 @@ button {
 
 .menu-item-visual {
   flex-shrink: 0;
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   border-radius: var(--radius-md);
   background: var(--color-bg-alt);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: visible;
 }
 
 .menu-emoji {
-  font-size: 36px;
+  font-size: 40px;
   line-height: 1;
 }
 
@@ -693,6 +694,18 @@ button {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  background: #f5f5f7;
+}
+
+.interior-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.interior-card:hover .interior-visual img {
+  transform: scale(1.05);
 }
 
 .interior-card--tall .interior-visual {
@@ -743,6 +756,7 @@ button {
 
 .info {
   background: var(--color-bg-alt);
+  position: relative;
 }
 
 .info-layout {
@@ -885,8 +899,8 @@ button {
 }
 
 .contact-left .section-tag {
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .contact-title {
@@ -1011,7 +1025,7 @@ button {
 
 .footer-tagline {
   font-size: 13px;
-  color: var(--color-text-tertiary);
+  color: #6e6e73;
 }
 
 .footer-links {
@@ -1035,7 +1049,7 @@ button {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  color: var(--color-text-tertiary);
+  color: #6e6e73;
 }
 
 /* ============================================
@@ -1116,20 +1130,22 @@ button {
   }
 
   .nav-links {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: var(--nav-height);
     right: -100%;
     width: 280px;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
+    max-height: calc(100vh - var(--nav-height));
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-xl);
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--space-md);
+    padding: var(--space-xl) var(--space-lg);
     transition: right var(--duration-normal) var(--ease-out);
     box-shadow: var(--shadow-xl);
+    overflow-y: auto;
   }
 
   .nav-links.open {
@@ -1138,6 +1154,8 @@ button {
 
   .nav-link {
     font-size: 16px;
+    padding: 12px 16px;
+    min-height: 48px;
   }
 
   .about-grid {
