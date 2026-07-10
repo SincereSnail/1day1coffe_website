@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="1일1잔 - 서울 노원구 광운대 앞, 아기자기한 디저트 카페. 수제 마카롱, 다쿠아즈, 휘낭시에, 까눌레, 커피" />
+  <title>1일1잔 | Seoul Nowon-gu Dessert Café</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">☕</span>
+        <span class="logo-text">1일1잔</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">소개</a></li>
+        <li><a href="#menu" class="nav-link">메뉴</a></li>
+        <li><a href="#interior" class="nav-link">공간</a></li>
+        <li><a href="#info" class="nav-link">오시는길</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">예약문의</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img class="hero-image" src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1600&q=80" alt="카페 내부" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Seoul · Nowon-gu · Gwangung-ro</p>
+      <h1 class="hero-title">
+        <span class="title-line">하루에</span>
+        <span class="title-line title-accent">한 잔의</span>
+        <span class="title-line">여유,</span>
+        <span class="title-line title-accent">1일1잔</span>
+      </h1>
+      <p class="hero-subtitle">
+        광운대 앞, 아기자기한 디저트 카페<br />
+        수제 마카롱 · 다쿠아즈 · 휘낭시에 · 까눌레 · 커피
+      </p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">메뉴 보기</a>
+        <a href="#info" class="btn btn-secondary">오시는 길</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>스크롤</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About</span>
+        <h2 class="section-title">소중한 시간을<br />쉬어가는 곳</h2>
+        <p class="section-desc">
+          서울선곡초등학교 바로 앞, 코너에 자리한 아기자기한 개인 카페입니다.
+          넓지는 않지만, 2인석이 대부분이라 편안하게 이용하실 수 있어요.
+        </p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">🧁</div>
+          <h3>수제 디저트</h3>
+          <p>마카롱, 다쿠아즈, 휘낭시에, 까눌레, 쿠키를 매일 직접 만듭니다.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">☕</div>
+          <h3>신선한 커피</h3>
+          <p>엄선된 원두로 내린 커피와 시그니처 바질 에이드, 다양한 음료를 즐기세요.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🐕</div>
+          <h3>반려동물 동반</h3>
+          <p>반려동물과 함께 오셔도 좋아요. 함께 여유로운 시간을 보내세요.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🅿️</div>
+          <h3>주차 편의</h3>
+          <p>인근 공영주차장을 이용하실 수 있어 차로 오시기 편리합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="section menu" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Menu</span>
+        <h2 class="section-title">메뉴</h2>
+        <p class="section-desc">
+          매일 신선하게 준비하는 수제 디저트와 음료를 만나보세요.
+        </p>
+      </div>
+      <div class="menu-tabs">
+        <button class="menu-tab active" data-category="all">전체</button>
+        <button class="menu-tab" data-category="dessert">디저트</button>
+        <button class="menu-tab" data-category="drink">음료</button>
+        <button class="menu-tab" data-category="signature">시그니처</button>
+      </div>
+      <div class="menu-grid">
+        <!-- Desserts -->
+        <div class="menu-item" data-category="dessert">
+          <div class="menu-item-visual">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80" alt="까눌레" />
+          </div>
+          <div class="menu-item-info">
+            <h3>까눌레</h3>
+            <p>겉은 바삭, 속은 쫄깃한 프렌치 디저트</p>
+            <span class="menu-price">2,500원</span>
+          </div>
+        </div>
+        <div class="menu-item" data-category="dessert">
+          <div class="menu-item-visual">
+            <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&q=80" alt="휘낭시에" />
+          </div>
+          <div class="menu-item-info">
+            <h3>휘낭시에</h3>
+            <p>프렌치 페이스트리, 버터 향 가득</p>
+            <span class="menu-price">2,500원</span>
+          </div>
+        </div>
+        <div class="menu-item" data-category="dessert">
+          <div class="menu-item-visual">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="다쿠아즈" />
+          </div>
+          <div class="menu-item-info">
+            <h3>다쿠아즈</h3>
+            <p>프랑스식 아몬드 퓨레 케이크</p>
+            <span class="menu-price">3,000원</span>
+          </div>
+        </div>
+        <div class="menu-item" data-category="dessert">
+          <div class="menu-item-visual">
+            <img src="https://images.unsplash.com/photo-1499636136146-1944406e81f7?w=600&q=80" alt="쿠키" />
+          </div>
+          <div class="menu-item-info">
+            <h3>쿠키</h3>
+            <p>다양한 맛의 수제 쿠키, 달콤한 간식으로 최고</p>
+            <span class="menu-price">2,000원</span>
+          </div>
+        </div>
+        <!-- Drinks -->
+        <div class="menu-item" data-category="drink">
+          <div class="menu-item-visual">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="드립 커피" />
+          </div>
+          <div class="menu-item-info">
+            <h3>커피</h3>
+            <p>엄선된 원두로 내린 아메리카노, 라떼, 에스프레소</p>
+            <span class="menu-price">3,500원~</span>
+          </div>
+        </div>
+        <div class="menu-item" data-category="drink">
+          <div class="menu-item-visual">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefda?w=600&q=80" alt="디카페인" />
+          </div>
+          <div class="menu-item-info">
+            <h3>디카페인</h3>
+            <p>카페인 없이도 부담없이 즐기는 커피 맛</p>
+            <span class="menu-price">3,500원~</span>
+          </div>
+        </div>
+        <div class="menu-item" data-category="drink">
+          <div class="menu-item-visual">
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="티·기타 음료" />
+          </div>
+          <div class="menu-item-info">
+            <h3>티 · 기타 음료</h3>
+            <p>다양한 차와 음료로 입맛에 맞게 선택하세요</p>
+            <span class="menu-price">3,000원~</span>
+          </div>
+        </div>
+        <!-- Signature -->
+        <div class="menu-item menu-item--featured" data-category="signature">
+          <div class="menu-item-visual">
+            <div class="menu-emoji">🍅</div>
+            <span class="menu-badge">시그니처</span>
+          </div>
+          <div class="menu-item-info">
+            <h3>토마토 바질 에이드</h3>
+            <p>여름의 청량함을 담은 시그니처 메뉴. 토마토청의 달콤함과 바질 향이 어우러집니다.</p>
+            <span class="menu-price">인기</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interior Section -->
+  <section class="section interior" id="interior">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Space</span>
+        <h2 class="section-title">아기자기한<br />카페 공간</h2>
+        <p class="section-desc">
+          초등학교 앞의 평화로운 골목에 자리한,<br />
+          작지만 따뜻한 휴식 공간입니다.
+        </p>
+      </div>
+      <div class="interior-grid">
+        <div class="interior-card interior-card--tall">
+          <div class="interior-visual interior-visual--1">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80" alt="아기자기한 인테리어" />
+          </div>
+          <div class="interior-caption">
+            <h3>아기자기한 인테리어</h3>
+            <p>작지만 알차고 아늑한 공간</p>
+          </div>
+        </div>
+        <div class="interior-card">
+          <div class="interior-visual interior-visual--2">
+            <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&q=80" alt="햇살 가득 창가" />
+          </div>
+          <div class="interior-caption">
+            <h3>햇살 가득 창가</h3>
+            <p>자연광이 잘 드는 편안한 좌석</p>
+          </div>
+        </div>
+        <div class="interior-card">
+          <div class="interior-visual interior-visual--3">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80" alt="다양한 디저트" />
+          </div>
+          <div class="interior-caption">
+            <h3>다양한 디저트</h3>
+            <p>보기만 해도 행복한 디저트 가득</p>
+          </div>
+        </div>
+        <div class="interior-card">
+          <div class="interior-visual interior-visual--4">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="여유로운 시간" />
+          </div>
+          <div class="interior-caption">
+            <h3>여유로운 시간</h3>
+            <p>커피 한 잔과 함께하는 특별한 시간</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="section info" id="info">
+    <div class="container">
+      <div class="info-layout">
+        <div class="info-text">
+          <span class="section-tag">Visit</span>
+          <h2 class="section-title">오시는 길</h2>
+          <p class="section-desc">
+            광운대역과 석계역 사이,<br />
+            서울선곡초등학교 바로 앞 건물 코너에 위치해 있습니다.
+          </p>
+          <div class="info-details">
+            <div class="info-row">
+              <span class="info-label">📍 주소</span>
+              <span class="info-value">서울특별시 노원구 광운로2길 6, 1층</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">🕐 영업시간</span>
+              <div class="info-value">
+                <div>월 – 금 10:00 – 19:00</div>
+                <div>토요일 12:00 – 17:00</div>
+                <div>일요일 정기 휴무</div>
+              </div>
+            </div>
+            <div class="info-row">
+              <span class="info-label">🚗 주차</span>
+              <span class="info-value">인근 공영주차장 이용 가능</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">🐕 반려동물</span>
+              <span class="info-value">반려동물 동반 가능</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">📞 연락처</span>
+              <span class="info-value">DM / 전화 예약 가능</span>
+            </div>
+          </div>
+          <div class="info-transport">
+            <div class="transport-card">
+              <span class="transport-icon">🚇</span>
+              <div>
+                <strong>광운대역</strong>
+                <p>도보 약 5분</p>
+              </div>
+            </div>
+            <div class="transport-card">
+              <span class="transport-icon">🚇</span>
+              <div>
+                <strong>석계역</strong>
+                <p>도보 약 8분</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-map">
+          <div class="map-placeholder">
+            <div class="map-content">
+              <span class="map-pin">📍</span>
+              <p>서울특별시 노원구 광운로2길 6</p>
+              <a href="https://map.naver.com/v5/search/1일1잔" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                네이버 지도에서 보기
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-left">
+          <span class="section-tag">Contact</span>
+          <h2 class="contact-title">예약 & 문의</h2>
+          <p class="contact-desc">
+            특별한 날, 소중한 사람과 함께<br />
+            1일1잔에서 특별한 시간을 보내세요.
+          </p>
+          <div class="contact-info">
+            <a href="https://www.instagram.com/oneday_onecoffee/" target="_blank" rel="noopener" class="contact-link">
+              <span class="contact-link-icon">📷</span>
+              <span>@oneday_onecoffee</span>
+            </a>
+            <p class="contact-note">DM으로 예약 및 문의를 받고 있습니다</p>
+          </div>
+        </div>
+        <div class="contact-right">
+          <div class="hours-card">
+            <h3>영업시간 안내</h3>
+            <div class="hours-list">
+              <div class="hours-row">
+                <span>월요일</span><span>10:00 – 19:00</span>
+              </div>
+              <div class="hours-row">
+                <span>화요일</span><span>10:00 – 19:00</span>
+              </div>
+              <div class="hours-row">
+                <span>수요일</span><span>10:00 – 19:00</span>
+              </div>
+              <div class="hours-row">
+                <span>목요일</span><span>10:00 – 19:00</span>
+              </div>
+              <div class="hours-row">
+                <span>금요일</span><span>10:00 – 19:00</span>
+              </div>
+              <div class="hours-row">
+                <span>토요일</span><span>12:00 – 17:00</span>
+              </div>
+              <div class="hours-row hours-row--closed">
+                <span>일요일</span><span>정기 휴무</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo">☕ 1일1잔</span>
+          <p class="footer-tagline">하루에 한 잔의 여유</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">소개</a>
+          <a href="#menu">메뉴</a>
+          <a href="#interior">공간</a>
+          <a href="#info">오시는 길</a>
+          <a href="https://www.instagram.com/oneday_onecoffee/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 1일1잔. All rights reserved.</p>
+        <p>서울특별시 노원구 광운로2길 6</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
